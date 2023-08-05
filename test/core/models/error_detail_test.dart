@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:errorlookup/core/models/error_detail.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -7,6 +9,13 @@ void main() {
     "alias": "ERROR_SUCCESS",
     "description": "The operation completed successfully."
   };
+  const typicalStringJson = '''
+  {
+    "code": 10,
+    "alias": "ERROR_BAD_ENVIRONMENT",
+    "description": "The environment is incorrect."
+  }
+  ''';
 
   group("ErrorDetailTest", () {
     test("JSONのMapから変換するテスト", () {
@@ -14,6 +23,14 @@ void main() {
       expect(errorDetail.code, 0);
       expect(errorDetail.alias, "ERROR_SUCCESS");
       expect(errorDetail.description, "The operation completed successfully.");
+    });
+
+    test("JSONの文字列から変換するテスト", () {
+      Map<String, dynamic> jsonMap = jsonDecode(typicalStringJson);
+      final errorDetail = ErrorDetail.fromJson(jsonMap);
+      expect(errorDetail.code, 10);
+      expect(errorDetail.alias, "ERROR_BAD_ENVIRONMENT");
+      expect(errorDetail.description, "The environment is incorrect.");
     });
   });
 }
