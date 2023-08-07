@@ -1,0 +1,649 @@
+{
+  "errors": [
+    {
+      "code": 1,
+      "alias": "EPERM",
+      "description": "Operation not permitted"
+    },
+    {
+      "code": 2,
+      "alias": "ENOENT",
+      "description": "No such file or directory"
+    },
+    {
+      "code": 3,
+      "alias": "ESRCH",
+      "description": "No such process"
+    },
+    {
+      "code": 4,
+      "alias": "EINTR",
+      "description": "Interrupted system call"
+    },
+    {
+      "code": 5,
+      "alias": "EIO",
+      "description": "I/O error"
+    },
+    {
+      "code": 6,
+      "alias": "ENXIO",
+      "description": "No such device or address"
+    },
+    {
+      "code": 7,
+      "alias": "E2BIG",
+      "description": "Argument list too long"
+    },
+    {
+      "code": 8,
+      "alias": "ENOEXEC",
+      "description": "Exec format error"
+    },
+    {
+      "code": 9,
+      "alias": "EBADF",
+      "description": "Bad file number"
+    },
+    {
+      "code": 10,
+      "alias": "ECHILD",
+      "description": "No child processes"
+    },
+    {
+      "code": 11,
+      "alias": "EAGAIN",
+      "description": "Try again"
+    },
+    {
+      "code": 12,
+      "alias": "ENOMEM",
+      "description": "Out of memory"
+    },
+    {
+      "code": 13,
+      "alias": "EACCES",
+      "description": "Permission denied"
+    },
+    {
+      "code": 14,
+      "alias": "EFAULT",
+      "description": "Bad address"
+    },
+    {
+      "code": 15,
+      "alias": "ENOTBLK",
+      "description": "Block device required"
+    },
+    {
+      "code": 16,
+      "alias": "EBUSY",
+      "description": "Device or resource busy"
+    },
+    {
+      "code": 17,
+      "alias": "EEXIST",
+      "description": "File exists"
+    },
+    {
+      "code": 18,
+      "alias": "EXDEV",
+      "description": "Cross-device link"
+    },
+    {
+      "code": 19,
+      "alias": "ENODEV",
+      "description": "No such device"
+    },
+    {
+      "code": 20,
+      "alias": "ENOTDIR",
+      "description": "Not a directory"
+    },
+    {
+      "code": 21,
+      "alias": "EISDIR",
+      "description": "Is a directory"
+    },
+    {
+      "code": 22,
+      "alias": "EINVAL",
+      "description": "Invalid argument"
+    },
+    {
+      "code": 23,
+      "alias": "ENFILE",
+      "description": "File table overflow"
+    },
+    {
+      "code": 24,
+      "alias": "EMFILE",
+      "description": "Too many open files"
+    },
+    {
+      "code": 25,
+      "alias": "ENOTTY",
+      "description": "Not a typewriter"
+    },
+    {
+      "code": 26,
+      "alias": "ETXTBSY",
+      "description": "Text file busy"
+    },
+    {
+      "code": 27,
+      "alias": "EFBIG",
+      "description": "File too large"
+    },
+    {
+      "code": 28,
+      "alias": "ENOSPC",
+      "description": "No space left on device"
+    },
+    {
+      "code": 29,
+      "alias": "ESPIPE",
+      "description": "Illegal seek"
+    },
+    {
+      "code": 30,
+      "alias": "EROFS",
+      "description": "Read-only file system"
+    },
+    {
+      "code": 31,
+      "alias": "EMLINK",
+      "description": "Too many links"
+    },
+    {
+      "code": 32,
+      "alias": "EPIPE",
+      "description": "Broken pipe"
+    },
+    {
+      "code": 33,
+      "alias": "EDOM",
+      "description": "Math argument out of domain of func"
+    },
+    {
+      "code": 34,
+      "alias": "ERANGE",
+      "description": "Math result not representable"
+    },
+    {
+      "code": 35,
+      "alias": "EDEADLK",
+      "description": "Resource deadlock would occur"
+    },
+    {
+      "code": 36,
+      "alias": "ENAMETOOLONG",
+      "description": "File name too long"
+    },
+    {
+      "code": 37,
+      "alias": "ENOLCK",
+      "description": "No record locks available"
+    },
+    {
+      "code": 38,
+      "alias": "ENOSYS",
+      "description": "Function not implemented"
+    },
+    {
+      "code": 39,
+      "alias": "ENOTEMPTY",
+      "description": "Directory not empty"
+    },
+    {
+      "code": 40,
+      "alias": "ELOOP",
+      "description": "Too many symbolic links encountered"
+    },
+    {
+      "code": 42,
+      "alias": "ENOMSG",
+      "description": "No message of desired type"
+    },
+    {
+      "code": 43,
+      "alias": "EIDRM",
+      "description": "Identifier removed"
+    },
+    {
+      "code": 44,
+      "alias": "ECHRNG",
+      "description": "Channel number out of range"
+    },
+    {
+      "code": 45,
+      "alias": "EL2NSYNC",
+      "description": "Level 2 not synchronized"
+    },
+    {
+      "code": 46,
+      "alias": "EL3HLT",
+      "description": "Level 3 halted"
+    },
+    {
+      "code": 47,
+      "alias": "EL3RST",
+      "description": "Level 3 reset"
+    },
+    {
+      "code": 48,
+      "alias": "ELNRNG",
+      "description": "Link number out of range"
+    },
+    {
+      "code": 49,
+      "alias": "EUNATCH",
+      "description": "Protocol driver not attached"
+    },
+    {
+      "code": 50,
+      "alias": "ENOCSI",
+      "description": "No CSI structure available"
+    },
+    {
+      "code": 51,
+      "alias": "EL2HLT",
+      "description": "Level 2 halted"
+    },
+    {
+      "code": 52,
+      "alias": "EBADE",
+      "description": "Invalid exchange"
+    },
+    {
+      "code": 53,
+      "alias": "EBADR",
+      "description": "Invalid request descriptor"
+    },
+    {
+      "code": 54,
+      "alias": "EXFULL",
+      "description": "Exchange full"
+    },
+    {
+      "code": 55,
+      "alias": "ENOANO",
+      "description": "No anode"
+    },
+    {
+      "code": 56,
+      "alias": "EBADRQC",
+      "description": "Invalid request code"
+    },
+    {
+      "code": 57,
+      "alias": "EBADSLT",
+      "description": "Invalid slot"
+    },
+    {
+      "code": 59,
+      "alias": "EBFONT",
+      "description": "Bad font file format"
+    },
+    {
+      "code": 60,
+      "alias": "ENOSTR",
+      "description": "Device not a stream"
+    },
+    {
+      "code": 61,
+      "alias": "ENODATA",
+      "description": "No data available"
+    },
+    {
+      "code": 62,
+      "alias": "ETIME",
+      "description": "Timer expired"
+    },
+    {
+      "code": 63,
+      "alias": "ENOSR",
+      "description": "Out of streams resources"
+    },
+    {
+      "code": 64,
+      "alias": "ENONET",
+      "description": "Machine is not on the network"
+    },
+    {
+      "code": 65,
+      "alias": "ENOPKG",
+      "description": "Package not installed"
+    },
+    {
+      "code": 66,
+      "alias": "EREMOTE",
+      "description": "Object is remote"
+    },
+    {
+      "code": 67,
+      "alias": "ENOLINK",
+      "description": "Link has been severed"
+    },
+    {
+      "code": 68,
+      "alias": "EADV",
+      "description": "Advertise error"
+    },
+    {
+      "code": 69,
+      "alias": "ESRMNT",
+      "description": "Srmount error"
+    },
+    {
+      "code": 70,
+      "alias": "ECOMM",
+      "description": "Communication error on send"
+    },
+    {
+      "code": 71,
+      "alias": "EPROTO",
+      "description": "Protocol error"
+    },
+    {
+      "code": 72,
+      "alias": "EMULTIHOP",
+      "description": "Multihop attempted"
+    },
+    {
+      "code": 73,
+      "alias": "EDOTDOT",
+      "description": "RFS specific error"
+    },
+    {
+      "code": 74,
+      "alias": "EBADMSG",
+      "description": "Not a data message"
+    },
+    {
+      "code": 75,
+      "alias": "EOVERFLOW",
+      "description": "Value too large for defined data type"
+    },
+    {
+      "code": 76,
+      "alias": "ENOTUNIQ",
+      "description": "Name not unique on network"
+    },
+    {
+      "code": 77,
+      "alias": "EBADFD",
+      "description": "File descriptor in bad state"
+    },
+    {
+      "code": 78,
+      "alias": "EREMCHG",
+      "description": "Remote address changed"
+    },
+    {
+      "code": 79,
+      "alias": "ELIBACC",
+      "description": "Can not access a needed shared library"
+    },
+    {
+      "code": 80,
+      "alias": "ELIBBAD",
+      "description": "Accessing a corrupted shared library"
+    },
+    {
+      "code": 81,
+      "alias": "ELIBSCN",
+      "description": ".lib section in a.out corrupted"
+    },
+    {
+      "code": 82,
+      "alias": "ELIBMAX",
+      "description": "Attempting to link in too many shared libraries"
+    },
+    {
+      "code": 83,
+      "alias": "ELIBEXEC",
+      "description": "Cannot exec a shared library directly"
+    },
+    {
+      "code": 84,
+      "alias": "EILSEQ",
+      "description": "Illegal byte sequence"
+    },
+    {
+      "code": 85,
+      "alias": "ERESTART",
+      "description": "Interrupted system call should be restarted"
+    },
+    {
+      "code": 86,
+      "alias": "ESTRPIPE",
+      "description": "Streams pipe error"
+    },
+    {
+      "code": 87,
+      "alias": "EUSERS",
+      "description": "Too many users"
+    },
+    {
+      "code": 88,
+      "alias": "ENOTSOCK",
+      "description": "Socket operation on non-socket"
+    },
+    {
+      "code": 89,
+      "alias": "EDESTADDRREQ",
+      "description": "Destination address required"
+    },
+    {
+      "code": 90,
+      "alias": "EMSGSIZE",
+      "description": "Message too long"
+    },
+    {
+      "code": 91,
+      "alias": "EPROTOTYPE",
+      "description": "Protocol wrong type for socket"
+    },
+    {
+      "code": 92,
+      "alias": "ENOPROTOOPT",
+      "description": "Protocol not available"
+    },
+    {
+      "code": 93,
+      "alias": "EPROTONOSUPPORT",
+      "description": "Protocol not supported"
+    },
+    {
+      "code": 94,
+      "alias": "ESOCKTNOSUPPORT",
+      "description": "Socket type not supported"
+    },
+    {
+      "code": 95,
+      "alias": "EOPNOTSUPP",
+      "description": "Operation not supported on transport endpoint"
+    },
+    {
+      "code": 96,
+      "alias": "EPFNOSUPPORT",
+      "description": "Protocol family not supported"
+    },
+    {
+      "code": 97,
+      "alias": "EAFNOSUPPORT",
+      "description": "Address family not supported by protocol"
+    },
+    {
+      "code": 98,
+      "alias": "EADDRINUSE",
+      "description": "Address already in use"
+    },
+    {
+      "code": 99,
+      "alias": "EADDRNOTAVAIL",
+      "description": "Cannot assign requested address"
+    },
+    {
+      "code": 100,
+      "alias": "ENETDOWN",
+      "description": "Network is down"
+    },
+    {
+      "code": 101,
+      "alias": "ENETUNREACH",
+      "description": "Network is unreachable"
+    },
+    {
+      "code": 102,
+      "alias": "ENETRESET",
+      "description": "Network dropped connection because of reset"
+    },
+    {
+      "code": 103,
+      "alias": "ECONNABORTED",
+      "description": "Software caused connection abort"
+    },
+    {
+      "code": 104,
+      "alias": "ECONNRESET",
+      "description": "Connection reset by peer"
+    },
+    {
+      "code": 105,
+      "alias": "ENOBUFS",
+      "description": "No buffer space available"
+    },
+    {
+      "code": 106,
+      "alias": "EISCONN",
+      "description": "Transport endpoint is already connected"
+    },
+    {
+      "code": 107,
+      "alias": "ENOTCONN",
+      "description": "Transport endpoint is not connected"
+    },
+    {
+      "code": 108,
+      "alias": "ESHUTDOWN",
+      "description": "Cannot send after transport endpoint shutdown"
+    },
+    {
+      "code": 109,
+      "alias": "ETOOMANYREFS",
+      "description": "Too many references: cannot splice"
+    },
+    {
+      "code": 110,
+      "alias": "ETIMEDOUT",
+      "description": "Connection timed out"
+    },
+    {
+      "code": 111,
+      "alias": "ECONNREFUSED",
+      "description": "Connection refused"
+    },
+    {
+      "code": 112,
+      "alias": "EHOSTDOWN",
+      "description": "Host is down"
+    },
+    {
+      "code": 113,
+      "alias": "EHOSTUNREACH",
+      "description": "No route to host"
+    },
+    {
+      "code": 114,
+      "alias": "EALREADY",
+      "description": "Operation already in progress"
+    },
+    {
+      "code": 115,
+      "alias": "EINPROGRESS",
+      "description": "Operation now in progress"
+    },
+    {
+      "code": 116,
+      "alias": "ESTALE",
+      "description": "Stale NFS file handle"
+    },
+    {
+      "code": 117,
+      "alias": "EUCLEAN",
+      "description": "Structure needs cleaning"
+    },
+    {
+      "code": 118,
+      "alias": "ENOTNAM",
+      "description": "Not a XENIX named type file"
+    },
+    {
+      "code": 119,
+      "alias": "ENAVAIL",
+      "description": "No XENIX semaphores available"
+    },
+    {
+      "code": 120,
+      "alias": "EISNAM",
+      "description": "Is a named type file"
+    },
+    {
+      "code": 121,
+      "alias": "EREMOTEIO",
+      "description": "Remote I/O error"
+    },
+    {
+      "code": 122,
+      "alias": "EDQUOT",
+      "description": "Quota exceeded"
+    },
+    {
+      "code": 123,
+      "alias": "ENOMEDIUM",
+      "description": "No medium found"
+    },
+    {
+      "code": 124,
+      "alias": "EMEDIUMTYPE",
+      "description": "Wrong medium type"
+    },
+    {
+      "code": 125,
+      "alias": "ECANCELED",
+      "description": "Operation Canceled"
+    },
+    {
+      "code": 126,
+      "alias": "ENOKEY",
+      "description": "Required key not available"
+    },
+    {
+      "code": 127,
+      "alias": "EKEYEXPIRED",
+      "description": "Key has expired"
+    },
+    {
+      "code": 128,
+      "alias": "EKEYREVOKED",
+      "description": "Key has been revoked"
+    },
+    {
+      "code": 129,
+      "alias": "EKEYREJECTED",
+      "description": "Key was rejected by service"
+    },
+    {
+      "code": 130,
+      "alias": "EOWNERDEAD",
+      "description": "Owner died"
+    },
+    {
+      "code": 131,
+      "alias": "ENOTRECOVERABLE",
+      "description": "State not recoverable"
+    }
+  ]
+}

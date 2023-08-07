@@ -1,0 +1,439 @@
+{
+  "errors": [
+    {
+      "code": 0,
+      "alias": "CURLE_OK",
+      "description": "All fine. Proceed as usual. "
+    },
+    {
+      "code": 1,
+      "alias": "CURLE_UNSUPPORTED_PROTOCOL",
+      "description": "The URL you passed to libcurl used a protocol that this libcurl does not support. The support might be a compile-time option that you did not use, it can be a misspelled protocol string or just a protocol libcurl has no code for. "
+    },
+    {
+      "code": 2,
+      "alias": "CURLE_FAILED_INIT",
+      "description": "Early initialization code failed. This is likely to be an internal error or problem, or a resource problem where something fundamental could not get done at init time. "
+    },
+    {
+      "code": 3,
+      "alias": "CURLE_URL_MALFORMAT",
+      "description": "The URL was not properly formatted. "
+    },
+    {
+      "code": 4,
+      "alias": "CURLE_NOT_BUILT_IN",
+      "description": "A requested feature, protocol or option was not found built-in in this libcurl due to a build-time decision. This means that a feature or option was not enabled or explicitly disabled when libcurl was built and in order to get it to function you have to get a rebuilt libcurl. "
+    },
+    {
+      "code": 5,
+      "alias": "CURLE_COULDNT_RESOLVE_PROXY",
+      "description": "Could not resolve proxy. The given proxy host could not be resolved. "
+    },
+    {
+      "code": 6,
+      "alias": "CURLE_COULDNT_RESOLVE_HOST",
+      "description": "Could not resolve host. The given remote host was not resolved. "
+    },
+    {
+      "code": 7,
+      "alias": "CURLE_COULDNT_CONNECT",
+      "description": "Failed to connect() to host or proxy. "
+    },
+    {
+      "code": 8,
+      "alias": "CURLE_WEIRD_SERVER_REPLY",
+      "description": "The server sent data libcurl could not parse. This error code was known as CURLE_FTP_WEIRD_SERVER_REPLY before 7.51.0. "
+    },
+    {
+      "code": 9,
+      "alias": "CURLE_REMOTE_ACCESS_DENIED",
+      "description": "We were denied access to the resource given in the URL. For FTP, this occurs while trying to change to the remote directory. "
+    },
+    {
+      "code": 10,
+      "alias": "CURLE_FTP_ACCEPT_FAILED",
+      "description": "While waiting for the server to connect back when an active FTP session is used, an error code was sent over the control connection or similar. "
+    },
+    {
+      "code": 11,
+      "alias": "CURLE_FTP_WEIRD_PASS_REPLY",
+      "description": "After having sent the FTP password to the server, libcurl expects a proper reply. This error code indicates that an unexpected code was returned. "
+    },
+    {
+      "code": 12,
+      "alias": "CURLE_FTP_ACCEPT_TIMEOUT",
+      "description": "During an active FTP session while waiting for the server to connect, the CURLOPT_ACCEPTTIMEOUT_MS (or the internal default) timeout expired. "
+    },
+    {
+      "code": 13,
+      "alias": "CURLE_FTP_WEIRD_PASV_REPLY",
+      "description": "libcurl failed to get a sensible result back from the server as a response to either a PASV or a EPSV command. The server is flawed. "
+    },
+    {
+      "code": 14,
+      "alias": "CURLE_FTP_WEIRD_",
+      "description": "FTP servers return a 227-line as a response to a PASV command. If libcurl fails to parse that line, this return code is passed back. "
+    },
+    {
+      "code": 15,
+      "alias": "CURLE_FTP_CANT_GET_HOST",
+      "description": "An internal failure to lookup the host used for the new connection. "
+    },
+    {
+      "code": 16,
+      "alias": "CURLE_HTTP",
+      "description": "A problem was detected in the HTTP2 framing layer. This is somewhat generic and can be one out of several problems, see the error buffer for details. "
+    },
+    {
+      "code": 17,
+      "alias": "CURLE_FTP_COULDNT_SET_TYPE",
+      "description": "Received an error when trying to set the transfer mode to binary or ASCII. "
+    },
+    {
+      "code": 18,
+      "alias": "CURLE_PARTIAL_FILE",
+      "description": "A file transfer was shorter or larger than expected. This happens when the server first reports an expected transfer size, and then delivers data that does not match the previously given size. "
+    },
+    {
+      "code": 19,
+      "alias": "CURLE_FTP_COULDNT_RETR_FILE",
+      "description": "This was either a weird reply to a 'RETR' command or a zero byte transfer complete. "
+    },
+    {
+      "code": 21,
+      "alias": "CURLE_QUOTE_ERROR",
+      "description": "When sending custom \"QUOTE\" commands to the remote server, one of the commands returned an error code that was 400 or higher (for FTP) or otherwise indicated unsuccessful completion of the command. "
+    },
+    {
+      "code": 22,
+      "alias": "CURLE_HTTP_RETURNED_ERROR",
+      "description": "This is returned if CURLOPT_FAILONERROR is set TRUE and the HTTP server returns an error code that is >= 400. "
+    },
+    {
+      "code": 23,
+      "alias": "CURLE_WRITE_ERROR",
+      "description": "An error occurred when writing received data to a local file, or an error was returned to libcurl from a write callback. "
+    },
+    {
+      "code": 25,
+      "alias": "CURLE_UPLOAD_FAILED",
+      "description": "Failed starting the upload. For FTP, the server typically denied the STOR command. The error buffer usually contains the server's explanation for this. "
+    },
+    {
+      "code": 26,
+      "alias": "CURLE_READ_ERROR",
+      "description": "There was a problem reading a local file or an error returned by the read callback. "
+    },
+    {
+      "code": 27,
+      "alias": "CURLE_OUT_OF_MEMORY",
+      "description": "A memory allocation request failed. This is serious badness and things are severely screwed up if this ever occurs. "
+    },
+    {
+      "code": 28,
+      "alias": "CURLE_OPERATION_TIMEDOUT",
+      "description": "Operation timeout. The specified time-out period was reached according to the conditions. "
+    },
+    {
+      "code": 30,
+      "alias": "CURLE_FTP_PORT_FAILED",
+      "description": "The FTP PORT command returned error. This mostly happens when you have not specified a good enough address for libcurl to use. See CURLOPT_FTPPORT. "
+    },
+    {
+      "code": 31,
+      "alias": "CURLE_FTP_COULDNT_USE_REST",
+      "description": "The FTP REST command returned error. This should never happen if the server is sane. "
+    },
+    {
+      "code": 33,
+      "alias": "CURLE_RANGE_ERROR",
+      "description": "The server does not support or accept range requests. "
+    },
+    {
+      "code": 34,
+      "alias": "CURLE_HTTP_POST_ERROR",
+      "description": "This is an odd error that mainly occurs due to internal confusion. "
+    },
+    {
+      "code": 35,
+      "alias": "CURLE_SSL_CONNECT_ERROR",
+      "description": "A problem occurred somewhere in the SSL/TLS handshake. You really want the error buffer and read the message there as it pinpoints the problem slightly more. Could be certificates (file formats, paths, permissions), passwords, and others. "
+    },
+    {
+      "code": 36,
+      "alias": "CURLE_BAD_DOWNLOAD_RESUME",
+      "description": "The download could not be resumed because the specified offset was out of the file boundary. "
+    },
+    {
+      "code": 37,
+      "alias": "CURLE_FILE_COULDNT_READ_FILE",
+      "description": "A file given with FILE:// could not be opened. Most likely because the file path does not identify an existing file. Did you check file permissions? "
+    },
+    {
+      "code": 38,
+      "alias": "CURLE_LDAP_CANNOT_BIND",
+      "description": "LDAP cannot bind. LDAP bind operation failed. "
+    },
+    {
+      "code": 39,
+      "alias": "CURLE_LDAP_SEARCH_FAILED",
+      "description": "LDAP search failed. "
+    },
+    {
+      "code": 41,
+      "alias": "CURLE_FUNCTION_NOT_FOUND",
+      "description": "Function not found. A required zlib function was not found. "
+    },
+    {
+      "code": 42,
+      "alias": "CURLE_ABORTED_BY_CALLBACK",
+      "description": "Aborted by callback. A callback returned \"abort\" to libcurl. "
+    },
+    {
+      "code": 43,
+      "alias": "CURLE_BAD_FUNCTION_ARGUMENT",
+      "description": "A function was called with a bad parameter. "
+    },
+    {
+      "code": 45,
+      "alias": "CURLE_INTERFACE_FAILED",
+      "description": "Interface error. A specified outgoing interface could not be used. Set which interface to use for outgoing connections' source IP address with CURLOPT_INTERFACE. "
+    },
+    {
+      "code": 47,
+      "alias": "CURLE_TOO_MANY_REDIRECTS",
+      "description": "Too many redirects. When following redirects, libcurl hit the maximum amount. Set your limit with CURLOPT_MAXREDIRS. "
+    },
+    {
+      "code": 48,
+      "alias": "CURLE_UNKNOWN_OPTION",
+      "description": "An option passed to libcurl is not recognized/known. Refer to the appropriate documentation. This is most likely a problem in the program that uses libcurl. The error buffer might contain more specific information about which exact option it concerns. "
+    },
+    {
+      "code": 49,
+      "alias": "CURLE_SETOPT_OPTION_SYNTAX",
+      "description": "An option passed in to a setopt was wrongly formatted. See error message for details about what option. "
+    },
+    {
+      "code": 52,
+      "alias": "CURLE_GOT_NOTHING",
+      "description": "Nothing was returned from the server, and under the circumstances, getting nothing is considered an error. "
+    },
+    {
+      "code": 53,
+      "alias": "CURLE_SSL_ENGINE_NOTFOUND",
+      "description": "The specified crypto engine was not found. "
+    },
+    {
+      "code": 54,
+      "alias": "CURLE_SSL_ENGINE_SETFAILED",
+      "description": "Failed setting the selected SSL crypto engine as default. "
+    },
+    {
+      "code": 55,
+      "alias": "CURLE_SEND_ERROR",
+      "description": "Failed sending network data. "
+    },
+    {
+      "code": 56,
+      "alias": "CURLE_RECV_ERROR",
+      "description": "Failure with receiving network data. "
+    },
+    {
+      "code": 58,
+      "alias": "CURLE_SSL_CERTPROBLEM",
+      "description": "problem with the local client certificate. "
+    },
+    {
+      "code": 59,
+      "alias": "CURLE_SSL_CIPHER",
+      "description": "Could not use specified cipher. "
+    },
+    {
+      "code": 60,
+      "alias": "CURLE_PEER_FAILED_VERIFICATION",
+      "description": "The remote server's SSL certificate or SSH fingerprint was deemed not OK. This error code has been unified with CURLE_SSL_CACERT since 7.62.0. Its previous value was 51. "
+    },
+    {
+      "code": 61,
+      "alias": "CURLE_BAD_CONTENT_ENCODING",
+      "description": "Unrecognized transfer encoding. "
+    },
+    {
+      "code": 63,
+      "alias": "CURLE_FILESIZE_EXCEEDED",
+      "description": "Maximum file size exceeded. "
+    },
+    {
+      "code": 64,
+      "alias": "CURLE_USE_SSL_FAILED",
+      "description": "Requested FTP SSL level failed. "
+    },
+    {
+      "code": 65,
+      "alias": "CURLE_SEND_FAIL_REWIND",
+      "description": "When doing a send operation curl had to rewind the data to retransmit, but the rewinding operation failed. "
+    },
+    {
+      "code": 66,
+      "alias": "CURLE_SSL_ENGINE_INITFAILED",
+      "description": "Initiating the SSL Engine failed. "
+    },
+    {
+      "code": 67,
+      "alias": "CURLE_LOGIN_DENIED",
+      "description": "The remote server denied curl to login (Added in 7.13.1) "
+    },
+    {
+      "code": 68,
+      "alias": "CURLE_TFTP_NOTFOUND",
+      "description": "File not found on TFTP server. "
+    },
+    {
+      "code": 69,
+      "alias": "CURLE_TFTP_PERM",
+      "description": "Permission problem on TFTP server. "
+    },
+    {
+      "code": 70,
+      "alias": "CURLE_REMOTE_DISK_FULL",
+      "description": "Out of disk space on the server. "
+    },
+    {
+      "code": 71,
+      "alias": "CURLE_TFTP_ILLEGAL",
+      "description": "Illegal TFTP operation. "
+    },
+    {
+      "code": 72,
+      "alias": "CURLE_TFTP_UNKNOWNID",
+      "description": "Unknown TFTP transfer ID. "
+    },
+    {
+      "code": 73,
+      "alias": "CURLE_REMOTE_FILE_EXISTS",
+      "description": "File already exists and will not be overwritten. "
+    },
+    {
+      "code": 74,
+      "alias": "CURLE_TFTP_NOSUCHUSER",
+      "description": "This error should never be returned by a properly functioning TFTP server. "
+    },
+    {
+      "code": 77,
+      "alias": "CURLE_SSL_CACERT_BADFILE",
+      "description": "Problem with reading the SSL CA cert (path? access rights?) "
+    },
+    {
+      "code": 78,
+      "alias": "CURLE_REMOTE_FILE_NOT_FOUND",
+      "description": "The resource referenced in the URL does not exist. "
+    },
+    {
+      "code": 79,
+      "alias": "CURLE_SSH",
+      "description": "An unspecified error occurred during the SSH session. "
+    },
+    {
+      "code": 80,
+      "alias": "CURLE_SSL_SHUTDOWN_FAILED",
+      "description": "Failed to shut down the SSL connection. "
+    },
+    {
+      "code": 81,
+      "alias": "CURLE_AGAIN",
+      "description": "Socket is not ready for send/recv wait till it's ready and try again. This return code is only returned from curl_easy_recv and curl_easy_send (Added in 7.18.2) "
+    },
+    {
+      "code": 82,
+      "alias": "CURLE_SSL_CRL_BADFILE",
+      "description": "Failed to load CRL file (Added in 7.19.0) "
+    },
+    {
+      "code": 83,
+      "alias": "CURLE_SSL_ISSUER_ERROR",
+      "description": "Issuer check failed (Added in 7.19.0) "
+    },
+    {
+      "code": 84,
+      "alias": "CURLE_FTP_PRET_FAILED",
+      "description": "The FTP server does not understand the PRET command at all or does not support the given argument. Be careful when using CURLOPT_CUSTOMREQUEST, a custom LIST command will be sent with the PRET command before PASV as well. (Added in 7.20.0) "
+    },
+    {
+      "code": 85,
+      "alias": "CURLE_RTSP_CSEQ_ERROR",
+      "description": "Mismatch of RTSP CSeq numbers. "
+    },
+    {
+      "code": 86,
+      "alias": "CURLE_RTSP_SESSION_ERROR",
+      "description": "Mismatch of RTSP Session Identifiers. "
+    },
+    {
+      "code": 87,
+      "alias": "CURLE_FTP_BAD_FILE_LIST",
+      "description": "Unable to parse FTP file list (during FTP wildcard downloading). "
+    },
+    {
+      "code": 88,
+      "alias": "CURLE_CHUNK_FAILED",
+      "description": "Chunk callback reported error. "
+    },
+    {
+      "code": 89,
+      "alias": "CURLE_NO_CONNECTION_AVAILABLE",
+      "description": "(For internal use only, will never be returned by libcurl) No connection available, the session will be queued. (added in 7.30.0) "
+    },
+    {
+      "code": 90,
+      "alias": "CURLE_SSL_PINNEDPUBKEYNOTMATCH",
+      "description": "Failed to match the pinned key specified with CURLOPT_PINNEDPUBLICKEY. "
+    },
+    {
+      "code": 91,
+      "alias": "CURLE_SSL_INVALIDCERTSTATUS",
+      "description": "Status returned failure when asked with CURLOPT_SSL_VERIFYSTATUS. "
+    },
+    {
+      "code": 92,
+      "alias": "CURLE_HTTP",
+      "description": "Stream error in the HTTP/2 framing layer. "
+    },
+    {
+      "code": 93,
+      "alias": "CURLE_RECURSIVE_API_CALL",
+      "description": "An API function was called from inside a callback. "
+    },
+    {
+      "code": 94,
+      "alias": "CURLE_AUTH_ERROR",
+      "description": "An authentication function returned an error. "
+    },
+    {
+      "code": 95,
+      "alias": "CURLE_HTTP",
+      "description": "A problem was detected in the HTTP/3 layer. This is somewhat generic and can be one out of several problems, see the error buffer for details. "
+    },
+    {
+      "code": 96,
+      "alias": "CURLE_QUIC_CONNECT_ERROR",
+      "description": "QUIC connection error. This error may be caused by an SSL library error. QUIC is the protocol used for HTTP/3 transfers. "
+    },
+    {
+      "code": 97,
+      "alias": "CURLE_PROXY",
+      "description": "Proxy handshake error. CURLINFO_PROXY_ERROR provides extra details on the specific problem. "
+    },
+    {
+      "code": 98,
+      "alias": "CURLE_SSL_CLIENTCERT",
+      "description": "SSL Client Certificate required. "
+    },
+    {
+      "code": 99,
+      "alias": "CURLE_UNRECOVERABLE_POLL",
+      "description": "An internal call to poll() or select() returned error that is not recoverable. "
+    }
+  ]
+}
