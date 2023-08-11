@@ -2,6 +2,7 @@ import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
 import 'package:errorlookup/core/models/error_detail.dart';
 import 'package:errorlookup/core/models/error_details.dart';
 import 'package:errorlookup/core/models/result.dart';
+import 'package:errorlookup/feature/home/models/home_state.dart';
 import 'package:errorlookup/feature/home/viewmodels/home_view_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -83,5 +84,28 @@ void main() {
     expect(res is Failure, true);
     expect((res as Failure<Object, Exception>).exception.toString(),
         Exception("取得失敗").toString());
+  });
+
+  test("updateErrorCodeInputでErrorCodeの入力値の状態を更新", () {
+    final spyRepository = SpyErrorCodesRepository(
+        getErrorCodesResultMap: <ErrorType,
+            Result<List<ErrorDetail>, Exception>>{});
+    final viewModel =
+        HomeViewModel(errorCodesRepository: spyRepository, initialFetch: false);
+    expect(viewModel.debugState, const HomeState(errorCodeInput: -1));
+    viewModel.updateErrorCodeInput("123");
+    expect(viewModel.debugState, const HomeState(errorCodeInput: 123));
+  });
+
+  test("入力値が数字以外の場合は-1の状態に更新する", () {
+    final spyRepository = SpyErrorCodesRepository(
+        getErrorCodesResultMap: <ErrorType,
+            Result<List<ErrorDetail>, Exception>>{});
+    final viewModel =
+        HomeViewModel(errorCodesRepository: spyRepository, initialFetch: false);
+    viewModel.updateErrorCodeInput("");
+    expect(viewModel.debugState, const HomeState(errorCodeInput: -1));
+    viewModel.updateErrorCodeInput("+123");
+    expect(viewModel.debugState, const HomeState(errorCodeInput: 123));
   });
 }

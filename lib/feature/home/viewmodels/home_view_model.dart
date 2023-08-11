@@ -8,10 +8,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// ホーム画面のビジネスロジックを扱うViewModel
 class HomeViewModel extends StateNotifier<HomeState> {
-  HomeViewModel({required ErrorCodesRepository errorCodesRepository})
+  HomeViewModel(
+      {required ErrorCodesRepository errorCodesRepository,
+      bool initialFetch = true})
       : _errorCodesRepository = errorCodesRepository,
         super(const HomeState()) {
-    fetchErrorCodes();
+    if (initialFetch) {
+      fetchErrorCodes();
+    }
   }
 
   final ErrorCodesRepository _errorCodesRepository;
@@ -43,6 +47,12 @@ class HomeViewModel extends StateNotifier<HomeState> {
       return const Success("success");
     }
     return const Success("fetching now");
+  }
+
+  /// ErrorCodeの入力値を更新する
+  void updateErrorCodeInput(final String newValue) {
+    final newErrorInput = int.tryParse(newValue) ?? -1;
+    state = state.copyWith(errorCodeInput: newErrorInput);
   }
 }
 
