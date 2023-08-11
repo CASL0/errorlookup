@@ -12,13 +12,12 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final uiState = ref.watch(homeViewModelProvider);
     final viewModel = ref.watch(homeViewModelProvider.notifier);
-    // TODO: エラーコードインプットの状態を追加
     final windowsError = uiState.windowsErrorDetails
-        .firstWhereOrNull((element) => element.code == 0);
+        .firstWhereOrNull((element) => element.code == uiState.errorCodeInput);
     final linuxError = uiState.linuxErrorDetails
-        .firstWhereOrNull((element) => element.code == 0);
+        .firstWhereOrNull((element) => element.code == uiState.errorCodeInput);
     final curlError = uiState.curlErrorDetails
-        .firstWhereOrNull((element) => element.code == 0);
+        .firstWhereOrNull((element) => element.code == uiState.errorCodeInput);
     return Scaffold(
         appBar: _TopAppBar(),
         body: Padding(
@@ -28,9 +27,7 @@ class HomePage extends ConsumerWidget {
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: const InputDecoration(
                     icon: Icon(Icons.pin), hintText: "Error Code"),
-                onChanged: (value) {
-                  // TODO: implement
-                },
+                onChanged: viewModel.updateErrorCodeInput,
               ),
               if (windowsError != null)
                 _ErrorDetailItem(errorDetail: windowsError),
