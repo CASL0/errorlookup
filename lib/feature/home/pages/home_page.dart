@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
 import 'package:errorlookup/feature/home/viewmodels/home_view_model.dart';
 import 'package:errorlookup/feature/home/views/error_detail_item.dart';
 import 'package:flutter/material.dart';
@@ -30,14 +31,19 @@ class HomePage extends ConsumerWidget {
                 onChanged: viewModel.updateErrorCodeInput,
               ),
               if (windowsError != null)
-                ErrorDetailItem(errorDetail: windowsError),
+                ErrorDetailItem(
+                  errorDetail: windowsError,
+                  errorType: ErrorType.windows,
+                ),
               if (linuxError != null)
                 ErrorDetailItem(
                   errorDetail: linuxError,
+                  errorType: ErrorType.linux,
                 ),
               if (curlError != null)
                 ErrorDetailItem(
                   errorDetail: curlError,
+                  errorType: ErrorType.curl,
                 )
             ])));
   }
