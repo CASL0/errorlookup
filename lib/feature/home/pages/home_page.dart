@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
-import 'package:errorlookup/core/models/error_detail.dart';
 import 'package:errorlookup/feature/home/viewmodels/home_view_model.dart';
+import 'package:errorlookup/feature/home/views/error_detail_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,13 +30,13 @@ class HomePage extends ConsumerWidget {
                 onChanged: viewModel.updateErrorCodeInput,
               ),
               if (windowsError != null)
-                _ErrorDetailItem(errorDetail: windowsError),
+                ErrorDetailItem(errorDetail: windowsError),
               if (linuxError != null)
-                _ErrorDetailItem(
+                ErrorDetailItem(
                   errorDetail: linuxError,
                 ),
               if (curlError != null)
-                _ErrorDetailItem(
+                ErrorDetailItem(
                   errorDetail: curlError,
                 )
             ])));
@@ -46,19 +46,4 @@ class HomePage extends ConsumerWidget {
 class _TopAppBar extends AppBar {
   @override
   Widget? get title => const Text("errorlookup");
-}
-
-// 仮実装
-class _ErrorDetailItem extends StatelessWidget {
-  const _ErrorDetailItem({required ErrorDetail errorDetail})
-      : _errorDetail = errorDetail;
-  final ErrorDetail _errorDetail;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        width: double.infinity,
-        padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-        child: Text(_errorDetail.alias));
-  }
 }
