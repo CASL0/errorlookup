@@ -38,6 +38,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   flutter_riverpod: ^2.3.6
   collection: ^1.17.0
+  expansion_tile_card: ^3.0.0
 
 dev_dependencies:
   flutter_test:
