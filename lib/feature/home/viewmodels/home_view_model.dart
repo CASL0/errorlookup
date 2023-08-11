@@ -10,7 +10,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class HomeViewModel extends StateNotifier<HomeState> {
   HomeViewModel({required ErrorCodesRepository errorCodesRepository})
       : _errorCodesRepository = errorCodesRepository,
-        super(const HomeState());
+        super(const HomeState()) {
+    fetchErrorCodes();
+  }
 
   final ErrorCodesRepository _errorCodesRepository;
 
