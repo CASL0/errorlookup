@@ -10,5 +10,6 @@ class HomeState with _$HomeState {
       {@Default([]) List<ErrorDetail> windowsErrorDetails,
       @Default([]) List<ErrorDetail> linuxErrorDetails,
       @Default([]) List<ErrorDetail> curlErrorDetails,
-      @Default(false) bool isFetchingErrorCodes}) = _HomeState;
+      @Default(false) bool isFetchingErrorCodes,
+      @Default(-1) int errorCodeInput}) = _HomeState;
 }

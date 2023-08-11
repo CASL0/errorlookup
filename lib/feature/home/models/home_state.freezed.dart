@@ -21,6 +21,7 @@ mixin _$HomeState {
   List<ErrorDetail> get linuxErrorDetails => throw _privateConstructorUsedError;
   List<ErrorDetail> get curlErrorDetails => throw _privateConstructorUsedError;
   bool get isFetchingErrorCodes => throw _privateConstructorUsedError;
+  int get errorCodeInput => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -36,7 +37,8 @@ abstract class $HomeStateCopyWith<$Res> {
       {List<ErrorDetail> windowsErrorDetails,
       List<ErrorDetail> linuxErrorDetails,
       List<ErrorDetail> curlErrorDetails,
-      bool isFetchingErrorCodes});
+      bool isFetchingErrorCodes,
+      int errorCodeInput});
 }
 
 /// @nodoc
@@ -56,6 +58,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? linuxErrorDetails = null,
     Object? curlErrorDetails = null,
     Object? isFetchingErrorCodes = null,
+    Object? errorCodeInput = null,
   }) {
     return _then(_value.copyWith(
       windowsErrorDetails: null == windowsErrorDetails
@@ -74,6 +77,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.isFetchingErrorCodes
           : isFetchingErrorCodes // ignore: cast_nullable_to_non_nullable
               as bool,
+      errorCodeInput: null == errorCodeInput
+          ? _value.errorCodeInput
+          : errorCodeInput // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -89,7 +96,8 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       {List<ErrorDetail> windowsErrorDetails,
       List<ErrorDetail> linuxErrorDetails,
       List<ErrorDetail> curlErrorDetails,
-      bool isFetchingErrorCodes});
+      bool isFetchingErrorCodes,
+      int errorCodeInput});
 }
 
 /// @nodoc
@@ -107,6 +115,7 @@ class __$$_HomeStateCopyWithImpl<$Res>
     Object? linuxErrorDetails = null,
     Object? curlErrorDetails = null,
     Object? isFetchingErrorCodes = null,
+    Object? errorCodeInput = null,
   }) {
     return _then(_$_HomeState(
       windowsErrorDetails: null == windowsErrorDetails
@@ -125,6 +134,10 @@ class __$$_HomeStateCopyWithImpl<$Res>
           ? _value.isFetchingErrorCodes
           : isFetchingErrorCodes // ignore: cast_nullable_to_non_nullable
               as bool,
+      errorCodeInput: null == errorCodeInput
+          ? _value.errorCodeInput
+          : errorCodeInput // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -136,7 +149,8 @@ class _$_HomeState implements _HomeState {
       {final List<ErrorDetail> windowsErrorDetails = const [],
       final List<ErrorDetail> linuxErrorDetails = const [],
       final List<ErrorDetail> curlErrorDetails = const [],
-      this.isFetchingErrorCodes = false})
+      this.isFetchingErrorCodes = false,
+      this.errorCodeInput = -1})
       : _windowsErrorDetails = windowsErrorDetails,
         _linuxErrorDetails = linuxErrorDetails,
         _curlErrorDetails = curlErrorDetails;
@@ -174,10 +188,13 @@ class _$_HomeState implements _HomeState {
   @override
   @JsonKey()
   final bool isFetchingErrorCodes;
+  @override
+  @JsonKey()
+  final int errorCodeInput;
 
   @override
   String toString() {
-    return 'HomeState(windowsErrorDetails: $windowsErrorDetails, linuxErrorDetails: $linuxErrorDetails, curlErrorDetails: $curlErrorDetails, isFetchingErrorCodes: $isFetchingErrorCodes)';
+    return 'HomeState(windowsErrorDetails: $windowsErrorDetails, linuxErrorDetails: $linuxErrorDetails, curlErrorDetails: $curlErrorDetails, isFetchingErrorCodes: $isFetchingErrorCodes, errorCodeInput: $errorCodeInput)';
   }
 
   @override
@@ -192,7 +209,9 @@ class _$_HomeState implements _HomeState {
             const DeepCollectionEquality()
                 .equals(other._curlErrorDetails, _curlErrorDetails) &&
             (identical(other.isFetchingErrorCodes, isFetchingErrorCodes) ||
-                other.isFetchingErrorCodes == isFetchingErrorCodes));
+                other.isFetchingErrorCodes == isFetchingErrorCodes) &&
+            (identical(other.errorCodeInput, errorCodeInput) ||
+                other.errorCodeInput == errorCodeInput));
   }
 
   @override
@@ -201,7 +220,8 @@ class _$_HomeState implements _HomeState {
       const DeepCollectionEquality().hash(_windowsErrorDetails),
       const DeepCollectionEquality().hash(_linuxErrorDetails),
       const DeepCollectionEquality().hash(_curlErrorDetails),
-      isFetchingErrorCodes);
+      isFetchingErrorCodes,
+      errorCodeInput);
 
   @JsonKey(ignore: true)
   @override
@@ -215,7 +235,8 @@ abstract class _HomeState implements HomeState {
       {final List<ErrorDetail> windowsErrorDetails,
       final List<ErrorDetail> linuxErrorDetails,
       final List<ErrorDetail> curlErrorDetails,
-      final bool isFetchingErrorCodes}) = _$_HomeState;
+      final bool isFetchingErrorCodes,
+      final int errorCodeInput}) = _$_HomeState;
 
   @override
   List<ErrorDetail> get windowsErrorDetails;
@@ -225,6 +246,8 @@ abstract class _HomeState implements HomeState {
   List<ErrorDetail> get curlErrorDetails;
   @override
   bool get isFetchingErrorCodes;
+  @override
+  int get errorCodeInput;
   @override
   @JsonKey(ignore: true)
   _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
