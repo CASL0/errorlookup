@@ -19,6 +19,7 @@ mixin _$AppRoute {
   String? get name => throw _privateConstructorUsedError;
   String get path => throw _privateConstructorUsedError;
   Widget? get page => throw _privateConstructorUsedError;
+  bool get shouldViewActions => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppRouteCopyWith<AppRoute> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $AppRouteCopyWith<$Res> {
   factory $AppRouteCopyWith(AppRoute value, $Res Function(AppRoute) then) =
       _$AppRouteCopyWithImpl<$Res, AppRoute>;
   @useResult
-  $Res call({String? name, String path, Widget? page});
+  $Res call({String? name, String path, Widget? page, bool shouldViewActions});
 }
 
 /// @nodoc
@@ -49,6 +50,7 @@ class _$AppRouteCopyWithImpl<$Res, $Val extends AppRoute>
     Object? name = freezed,
     Object? path = null,
     Object? page = freezed,
+    Object? shouldViewActions = null,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
@@ -63,6 +65,10 @@ class _$AppRouteCopyWithImpl<$Res, $Val extends AppRoute>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as Widget?,
+      shouldViewActions: null == shouldViewActions
+          ? _value.shouldViewActions
+          : shouldViewActions // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -74,7 +80,7 @@ abstract class _$$_AppRouteCopyWith<$Res> implements $AppRouteCopyWith<$Res> {
       __$$_AppRouteCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, String path, Widget? page});
+  $Res call({String? name, String path, Widget? page, bool shouldViewActions});
 }
 
 /// @nodoc
@@ -91,6 +97,7 @@ class __$$_AppRouteCopyWithImpl<$Res>
     Object? name = freezed,
     Object? path = null,
     Object? page = freezed,
+    Object? shouldViewActions = null,
   }) {
     return _then(_$_AppRoute(
       name: freezed == name
@@ -105,6 +112,10 @@ class __$$_AppRouteCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as Widget?,
+      shouldViewActions: null == shouldViewActions
+          ? _value.shouldViewActions
+          : shouldViewActions // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -112,7 +123,8 @@ class __$$_AppRouteCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AppRoute implements _AppRoute {
-  const _$_AppRoute({this.name, this.path = "", this.page});
+  const _$_AppRoute(
+      {this.name, this.path = "", this.page, this.shouldViewActions = true});
 
   @override
   final String? name;
@@ -121,10 +133,13 @@ class _$_AppRoute implements _AppRoute {
   final String path;
   @override
   final Widget? page;
+  @override
+  @JsonKey()
+  final bool shouldViewActions;
 
   @override
   String toString() {
-    return 'AppRoute(name: $name, path: $path, page: $page)';
+    return 'AppRoute(name: $name, path: $path, page: $page, shouldViewActions: $shouldViewActions)';
   }
 
   @override
@@ -134,11 +149,14 @@ class _$_AppRoute implements _AppRoute {
             other is _$_AppRoute &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.path, path) || other.path == path) &&
-            (identical(other.page, page) || other.page == page));
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.shouldViewActions, shouldViewActions) ||
+                other.shouldViewActions == shouldViewActions));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, path, page);
+  int get hashCode =>
+      Object.hash(runtimeType, name, path, page, shouldViewActions);
 
   @JsonKey(ignore: true)
   @override
@@ -151,7 +169,8 @@ abstract class _AppRoute implements AppRoute {
   const factory _AppRoute(
       {final String? name,
       final String path,
-      final Widget? page}) = _$_AppRoute;
+      final Widget? page,
+      final bool shouldViewActions}) = _$_AppRoute;
 
   @override
   String? get name;
@@ -159,6 +178,8 @@ abstract class _AppRoute implements AppRoute {
   String get path;
   @override
   Widget? get page;
+  @override
+  bool get shouldViewActions;
   @override
   @JsonKey(ignore: true)
   _$$_AppRouteCopyWith<_$_AppRoute> get copyWith =>

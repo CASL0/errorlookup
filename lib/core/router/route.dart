@@ -6,5 +6,8 @@ part "route.freezed.dart";
 @freezed
 class AppRoute with _$AppRoute {
   const factory AppRoute(
-      {String? name, @Default("") String path, Widget? page}) = _AppRoute;
+      {String? name,
+      @Default("") String path,
+      Widget? page,
+      @Default(true) bool shouldViewActions}) = _AppRoute;
 }
