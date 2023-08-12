@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:errorlookup/core/common/views/top_app_bar.dart';
 import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
 import 'package:errorlookup/feature/home/viewmodels/home_view_model.dart';
 import 'package:errorlookup/feature/home/views/error_detail_item.dart';
@@ -20,7 +21,9 @@ class HomePage extends ConsumerWidget {
     final curlError = uiState.curlErrorDetails
         .firstWhereOrNull((element) => element.code == uiState.errorCodeInput);
     return Scaffold(
-        appBar: _TopAppBar(),
+        appBar: TopAppBar(
+          currentRouteName: "home",
+        ),
         body: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(children: [
@@ -48,28 +51,3 @@ class HomePage extends ConsumerWidget {
             ])));
   }
 }
-
-class _TopAppBar extends AppBar {
-  @override
-  Widget? get title => const Text("errorlookup");
-  @override
-  List<Widget>? get actions => [
-        PopupMenuButton(itemBuilder: ((context) {
-          return _actions
-              .map((e) => PopupMenuItem(
-                    value: e,
-                    child: TextButton.icon(
-                      icon: const Icon(Icons.info),
-                      onPressed: () {
-                        // TODO: implement
-                      },
-                      label: Text(e),
-                    ),
-                  ))
-              .toList();
-        }))
-      ];
-}
-
-/// TopAppBarのアクション
-final Set<String> _actions = {"ABOUT"};
