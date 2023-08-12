@@ -52,4 +52,24 @@ class HomePage extends ConsumerWidget {
 class _TopAppBar extends AppBar {
   @override
   Widget? get title => const Text("errorlookup");
+  @override
+  List<Widget>? get actions => [
+        PopupMenuButton(itemBuilder: ((context) {
+          return _actions
+              .map((e) => PopupMenuItem(
+                    value: e,
+                    child: TextButton.icon(
+                      icon: const Icon(Icons.info),
+                      onPressed: () {
+                        // TODO: implement
+                      },
+                      label: Text(e),
+                    ),
+                  ))
+              .toList();
+        }))
+      ];
 }
+
+/// TopAppBarのアクション
+final Set<String> _actions = {"ABOUT"};
