@@ -24,6 +24,10 @@ class AboutPage extends ConsumerWidget {
             ListTile(
               title: const Text("Source code"),
               onTap: viewModel.launchSource,
+            ),
+            ListTile(
+              title: const Text("OSS Licenses"),
+              onTap: () => showLicensePage(context: context),
             )
           ],
         ));
