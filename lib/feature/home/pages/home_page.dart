@@ -27,11 +27,14 @@ class HomePage extends ConsumerWidget {
         body: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(children: [
-              TextField(
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.pin), hintText: "Error Code"),
-                onChanged: viewModel.updateErrorCodeInput,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: TextField(
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  decoration: const InputDecoration(
+                      icon: Icon(Icons.pin), hintText: "Error Code"),
+                  onChanged: viewModel.updateErrorCodeInput,
+                ),
               ),
               if (windowsError != null)
                 ErrorDetailItem(
