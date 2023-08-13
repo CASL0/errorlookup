@@ -26,7 +26,7 @@ class HomePage extends ConsumerWidget {
         ),
         body: Padding(
             padding: const EdgeInsets.all(16),
-            child: Column(children: [
+            child: ListView(children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: TextField(
