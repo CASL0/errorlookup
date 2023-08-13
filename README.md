@@ -1,16 +1,28 @@
 # errorlookup
 
-A new Flutter project.
+[![License](https://black.readthedocs.io/en/stable/_static/license.svg)](LICENSE)
 
-## Getting Started
+エラーコードからその詳細を逆引きするアプリです。
 
-This project is a starting point for a Flutter application.
+<img src="https://github.com/CASL0/errorlookup/assets/28913760/0101b697-3b4e-43c6-9fff-75b75825f826" width="70%" >
 
-A few resources to get you started if this is your first Flutter project:
+## 詳細
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+[error_codes](https://github.com/CASL0/error_codes)のスクリプトで収集したエラーコード詳細から逆引きした結果を表示しています。
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 対応エラーコード
+
+- GetLastError
+- errno
+- cURL
+
+## 開発
+
+### ビルド方法
+
+[fvm](https://fvm.app/)をインストールし以下を実行してください。
+
+```sh
+fvm install
+fvm flutter run
+```
