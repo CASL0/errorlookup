@@ -17,12 +17,18 @@ class TopAppBar extends AppBar {
             return _actions
                 .map((e) => PopupMenuItem(
                       value: e,
-                      child: TextButton.icon(
-                        icon: const Icon(Icons.info),
-                        onPressed: () {
-                          context.pushNamed("about");
-                        },
-                        label: Text(e),
+                      onTap: () => context.pushNamed("about"),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.info,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: Text(e),
+                          )
+                        ],
                       ),
                     ))
                 .toList();
