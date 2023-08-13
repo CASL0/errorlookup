@@ -10,6 +10,7 @@ class AboutPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final uiState = ref.watch(aboutViewModelProvider);
+    final viewModel = ref.watch(aboutViewModelProvider.notifier);
     return Scaffold(
         appBar: TopAppBar(
           currentRouteName: "about",
@@ -19,6 +20,10 @@ class AboutPage extends ConsumerWidget {
             ListTile(
               title: const Text("App version"),
               trailing: Text("${uiState.version} (${uiState.buildNumber})"),
+            ),
+            ListTile(
+              title: const Text("Source code"),
+              onTap: viewModel.launchSource,
             )
           ],
         ));
