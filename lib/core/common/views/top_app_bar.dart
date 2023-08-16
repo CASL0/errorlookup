@@ -15,9 +15,10 @@ class TopAppBar extends AppBar {
       ? [
           PopupMenuButton(itemBuilder: ((context) {
             return _actions
+                .where((element) => element != homeRouteName)
                 .map((e) => PopupMenuItem(
                       value: e,
-                      onTap: () => context.pushNamed("about"),
+                      onTap: () => context.pushNamed(e),
                       child: Row(
                         children: [
                           Icon(
@@ -26,7 +27,7 @@ class TopAppBar extends AppBar {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
-                            child: Text(e),
+                            child: Text(e.toUpperCase()),
                           )
                         ],
                       ),
@@ -45,4 +46,4 @@ class TopAppBar extends AppBar {
 }
 
 /// TopAppBarのアクション
-final Set<String> _actions = {"ABOUT"};
+final _actions = appRoutes.map((e) => e.name).toSet();

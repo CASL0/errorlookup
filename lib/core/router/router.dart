@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
     initialLocation:
-        appRoutes.firstWhere((element) => element.name == "home").path,
+        appRoutes.firstWhere((element) => element.name == homeRouteName).path,
     routes: appRoutes
         .where((element) => element.page != null)
         .map((e) => GoRoute(
