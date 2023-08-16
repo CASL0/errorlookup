@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AppRoute {
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get path => throw _privateConstructorUsedError;
   Widget? get page => throw _privateConstructorUsedError;
   bool get shouldViewActions => throw _privateConstructorUsedError;
@@ -31,7 +31,7 @@ abstract class $AppRouteCopyWith<$Res> {
   factory $AppRouteCopyWith(AppRoute value, $Res Function(AppRoute) then) =
       _$AppRouteCopyWithImpl<$Res, AppRoute>;
   @useResult
-  $Res call({String? name, String path, Widget? page, bool shouldViewActions});
+  $Res call({String name, String path, Widget? page, bool shouldViewActions});
 }
 
 /// @nodoc
@@ -47,16 +47,16 @@ class _$AppRouteCopyWithImpl<$Res, $Val extends AppRoute>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
     Object? path = null,
     Object? page = freezed,
     Object? shouldViewActions = null,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -80,7 +80,7 @@ abstract class _$$_AppRouteCopyWith<$Res> implements $AppRouteCopyWith<$Res> {
       __$$_AppRouteCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, String path, Widget? page, bool shouldViewActions});
+  $Res call({String name, String path, Widget? page, bool shouldViewActions});
 }
 
 /// @nodoc
@@ -94,16 +94,16 @@ class __$$_AppRouteCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
     Object? path = null,
     Object? page = freezed,
     Object? shouldViewActions = null,
   }) {
     return _then(_$_AppRoute(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -124,10 +124,14 @@ class __$$_AppRouteCopyWithImpl<$Res>
 
 class _$_AppRoute implements _AppRoute {
   const _$_AppRoute(
-      {this.name, this.path = "", this.page, this.shouldViewActions = true});
+      {this.name = "",
+      this.path = "",
+      this.page,
+      this.shouldViewActions = true});
 
   @override
-  final String? name;
+  @JsonKey()
+  final String name;
   @override
   @JsonKey()
   final String path;
@@ -167,13 +171,13 @@ class _$_AppRoute implements _AppRoute {
 
 abstract class _AppRoute implements AppRoute {
   const factory _AppRoute(
-      {final String? name,
+      {final String name,
       final String path,
       final Widget? page,
       final bool shouldViewActions}) = _$_AppRoute;
 
   @override
-  String? get name;
+  String get name;
   @override
   String get path;
   @override
