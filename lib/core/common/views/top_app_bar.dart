@@ -23,13 +23,14 @@ class TopAppBar extends AppBar {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.info,
+                            _actionsDisplay(context: context, action: e).icon,
                             color: Theme.of(context).primaryColor,
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
-                            child: Text(_actionsDisplayName(
-                                context: context, action: e)),
+                            child: Text(
+                                _actionsDisplay(context: context, action: e)
+                                    .displayName),
                           )
                         ],
                       ),
@@ -47,15 +48,21 @@ class TopAppBar extends AppBar {
   }
 
   /// アクションの表示名を取得
-  String _actionsDisplayName(
+  ({String displayName, IconData icon}) _actionsDisplay(
       {required final BuildContext context, required final String action}) {
     switch (action) {
       case "about":
-        return AppLocalizations.of(context)!.about;
+        return (
+          displayName: AppLocalizations.of(context)!.about,
+          icon: Icons.info
+        );
       case "settings":
-        return AppLocalizations.of(context)!.settings;
+        return (
+          displayName: AppLocalizations.of(context)!.settings,
+          icon: Icons.settings
+        );
       default:
-        return "UNKNOWN";
+        return (displayName: "UNKNOWN", icon: Icons.abc);
     }
   }
 }
