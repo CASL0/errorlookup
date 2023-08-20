@@ -1,0 +1,14 @@
+{
+  "@@locale": "ja",
+  "searchHint": "エラーコードで検索",
+  "version": "バージョン",
+  "source": "ソースコード",
+  "licenses": "ライセンス",
+  "theme": "テーマ設定",
+  "themeSystem": "端末設定に従う",
+  "themeLight": "ライト",
+  "themeDark": "ダーク",
+  "close": "閉じる",
+  "about": "アプリについて",
+  "settings": "設定"
+}

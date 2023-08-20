@@ -1,5 +1,6 @@
 import 'package:errorlookup/core/router/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 /// TopAppBar
@@ -27,7 +28,8 @@ class TopAppBar extends AppBar {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
-                            child: Text(e.toUpperCase()),
+                            child: Text(_actionsDisplayName(
+                                context: context, action: e)),
                           )
                         ],
                       ),
@@ -42,6 +44,19 @@ class TopAppBar extends AppBar {
     return appRoutes
         .where((element) => element.shouldViewActions)
         .any((element) => element.name == _currentRouteName);
+  }
+
+  /// アクションの表示名を取得
+  String _actionsDisplayName(
+      {required final BuildContext context, required final String action}) {
+    switch (action) {
+      case "about":
+        return AppLocalizations.of(context)!.about;
+      case "settings":
+        return AppLocalizations.of(context)!.settings;
+      default:
+        return "UNKNOWN";
+    }
   }
 }
 

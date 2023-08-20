@@ -4,6 +4,7 @@ import 'package:errorlookup/core/models/main_state.dart';
 import 'package:errorlookup/core/models/theme_data.dart' as theme_data;
 import 'package:errorlookup/core/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 
@@ -21,14 +22,15 @@ class MyApp extends ConsumerWidget {
     final mainState = ref.watch(_mainViewModelProvider);
 
     return MaterialApp.router(
-      title: "errorlookup",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      darkTheme: ThemeData.dark(),
-      themeMode: theme_data.convertTheme[mainState.theme]!,
-      routerConfig: router,
-    );
+        title: "errorlookup",
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        darkTheme: ThemeData.dark(),
+        themeMode: theme_data.convertTheme[mainState.theme]!,
+        routerConfig: router,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales);
   }
 }
 

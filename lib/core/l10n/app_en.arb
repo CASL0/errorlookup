@@ -1,0 +1,14 @@
+{
+  "@@locale": "en",
+  "searchHint": "Search by error code",
+  "version": "Version",
+  "source": "Source code",
+  "licenses": "Licenses",
+  "theme": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "close": "CLOSE",
+  "about": "ABOUT",
+  "settings": "SETTINGS"
+}
