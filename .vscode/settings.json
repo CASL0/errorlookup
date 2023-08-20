@@ -20,5 +20,6 @@
       "source.addMissingImports": true,
       "quickfix.insertSemicolon": true
     }
-  }
+  },
+  "dart.flutterGenerateLocalizationsOnSave": "all"
 }
