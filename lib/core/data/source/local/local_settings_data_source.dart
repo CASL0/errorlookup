@@ -21,7 +21,7 @@ class LocalSettingsDataSource implements SettingsDataSource {
   static const _themeKey = "theme";
 
   /// テーマ設定のストリーム
-  final _themeSettingStreamController = StreamController<ThemeMode>();
+  final _themeSettingStreamController = StreamController<ThemeMode>.broadcast();
 
   LocalSettingsDataSource({bool initialize = true}) {
     if (initialize) {
