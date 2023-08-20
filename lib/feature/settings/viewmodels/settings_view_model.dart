@@ -1,12 +1,11 @@
-import 'package:errorlookup/core/data/repository/default_settings_repository.dart';
 import 'package:errorlookup/core/data/repository/settings_repository.dart';
-import 'package:errorlookup/core/data/source/local/local_settings_data_source.dart';
 import 'package:errorlookup/core/models/result.dart';
 import 'package:errorlookup/core/models/theme_data.dart' as theme_data;
 import 'package:errorlookup/feature/settings/models/settings_state.dart';
 import 'package:errorlookup/feature/settings/views/theme_setting_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get_it/get_it.dart';
 
 /// 設定画面のビジネスロジックを扱うVieModel
 class SettingsViewModel extends StateNotifier<SettingsState> {
@@ -42,6 +41,4 @@ class SettingsViewModel extends StateNotifier<SettingsState> {
 
 final settingsViewModelProvider =
     StateNotifierProvider<SettingsViewModel, SettingsState>((ref) =>
-        SettingsViewModel(
-            settingsRepository: DefaultSettingsRepository(
-                dataSource: LocalSettingsDataSource())));
+        SettingsViewModel(settingsRepository: GetIt.I<SettingsRepository>()));

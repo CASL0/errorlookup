@@ -1,10 +1,9 @@
-import 'package:errorlookup/core/data/repository/default_error_codes_repository.dart';
 import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
-import 'package:errorlookup/core/data/source/local/local_error_codes_data_source.dart';
 import 'package:errorlookup/core/models/error_detail.dart';
 import 'package:errorlookup/core/models/result.dart';
 import 'package:errorlookup/feature/home/models/home_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get_it/get_it.dart';
 
 /// ホーム画面のビジネスロジックを扱うViewModel
 class HomeViewModel extends StateNotifier<HomeState> {
@@ -57,6 +56,5 @@ class HomeViewModel extends StateNotifier<HomeState> {
 }
 
 final homeViewModelProvider = StateNotifierProvider<HomeViewModel, HomeState>(
-    (ref) => HomeViewModel(
-        errorCodesRepository: DefaultErrorCodesRepository(
-            dataSource: LocalErrorCodesDataSource())));
+    (ref) =>
+        HomeViewModel(errorCodesRepository: GetIt.I<ErrorCodesRepository>()));
