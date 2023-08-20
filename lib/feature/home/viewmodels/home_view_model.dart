@@ -32,6 +32,7 @@ class HomeViewModel extends StateNotifier<HomeState> {
       for (final element in errorCodes) {
         // 一部が取得失敗していた場合はその旨を返す
         if (element is Failure) {
+          state = state.copyWith(isFetchingErrorCodes: false);
           return element;
         }
       }

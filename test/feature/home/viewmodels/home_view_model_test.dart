@@ -61,7 +61,8 @@ void main() {
       };
       final spyRepository =
           SpyErrorCodesRepository(getErrorCodesResultMap: result);
-      final viewModel = HomeViewModel(errorCodesRepository: spyRepository);
+      final viewModel = HomeViewModel(
+          errorCodesRepository: spyRepository, initialFetch: false);
       final future = viewModel.fetchErrorCodes();
       viewModel.fetchErrorCodes();
       expect(spyRepository.callCount, 3);
@@ -79,7 +80,8 @@ void main() {
     };
     final spyRepository =
         SpyErrorCodesRepository(getErrorCodesResultMap: result);
-    final viewModel = HomeViewModel(errorCodesRepository: spyRepository);
+    final viewModel =
+        HomeViewModel(errorCodesRepository: spyRepository, initialFetch: false);
     final res = await viewModel.fetchErrorCodes();
     expect(res is Failure, true);
     expect((res as Failure<Object, Exception>).exception.toString(),
