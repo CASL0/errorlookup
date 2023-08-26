@@ -4,6 +4,7 @@ import 'package:errorlookup/core/models/error_details.dart';
 import 'package:errorlookup/core/models/result.dart';
 import 'package:errorlookup/feature/home/models/home_state.dart';
 import 'package:errorlookup/feature/home/viewmodels/home_view_model.dart';
+import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../core/data/repository/spy_error_codes_repository.dart';
@@ -53,39 +54,43 @@ void main() {
     curlErrorDetails = ErrorDetails.fromJson(curlObjectJson);
   });
   group("HomeViewModelTest", () {
-    test("fetchErrorCodesの排他制御", () async {
+    test("fetchErrorCodesの排他制御", () {
+      fakeAsync((fakeTime) {
+        final Map<ErrorType, Result<List<ErrorDetail>, Exception>> result = {
+          ErrorType.windows: Success(windowsErrorDetails.errors),
+          ErrorType.linux: Success(linuxErrorDetails.errors),
+          ErrorType.curl: Success(curlErrorDetails.errors)
+        };
+        final spyRepository =
+            SpyErrorCodesRepository(getErrorCodesResultMap: result);
+        final viewModel = HomeViewModel(
+            errorCodesRepository: spyRepository, initialFetch: false);
+        viewModel.fetchErrorCodes();
+        viewModel.fetchErrorCodes();
+        expect(spyRepository.callCount, 3);
+        fakeTime.elapse(const Duration(milliseconds: 500));
+        viewModel.fetchErrorCodes();
+        expect(spyRepository.callCount, 6);
+      });
+    });
+  });
+
+  test("一部のエラーコードの取得に失敗した場合はfetchErrorCodesがFailureを返す", () async {
+    fakeAsync((fakeTime) async {
       final Map<ErrorType, Result<List<ErrorDetail>, Exception>> result = {
         ErrorType.windows: Success(windowsErrorDetails.errors),
-        ErrorType.linux: Success(linuxErrorDetails.errors),
+        ErrorType.linux: Failure(Exception("取得失敗")),
         ErrorType.curl: Success(curlErrorDetails.errors)
       };
       final spyRepository =
           SpyErrorCodesRepository(getErrorCodesResultMap: result);
       final viewModel = HomeViewModel(
           errorCodesRepository: spyRepository, initialFetch: false);
-      final future = viewModel.fetchErrorCodes();
-      viewModel.fetchErrorCodes();
-      expect(spyRepository.callCount, 3);
-      await future;
-      await viewModel.fetchErrorCodes();
-      expect(spyRepository.callCount, 6);
+      final res = await viewModel.fetchErrorCodes();
+      expect(res is Failure, true);
+      expect((res as Failure<Object, Exception>).exception.toString(),
+          Exception("取得失敗").toString());
     });
-  });
-
-  test("一部のエラーコードの取得に失敗した場合はfetchErrorCodesがFailureを返す", () async {
-    final Map<ErrorType, Result<List<ErrorDetail>, Exception>> result = {
-      ErrorType.windows: Success(windowsErrorDetails.errors),
-      ErrorType.linux: Failure(Exception("取得失敗")),
-      ErrorType.curl: Success(curlErrorDetails.errors)
-    };
-    final spyRepository =
-        SpyErrorCodesRepository(getErrorCodesResultMap: result);
-    final viewModel =
-        HomeViewModel(errorCodesRepository: spyRepository, initialFetch: false);
-    final res = await viewModel.fetchErrorCodes();
-    expect(res is Failure, true);
-    expect((res as Failure<Object, Exception>).exception.toString(),
-        Exception("取得失敗").toString());
   });
 
   test("updateErrorCodeInputでErrorCodeの入力値の状態を更新", () {
