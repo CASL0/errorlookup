@@ -1,0 +1,41 @@
+name: Coverage Report
+
+on:
+  workflow_run:
+    workflows: [Unit Test]
+    types:
+      - completed
+
+jobs:
+  genhtml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup lcov
+        run: sudo apt-get install -qqy lcov
+      - name: Download coverage file
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          run_id: ${{ github.event.workflow_run.id }}
+      - name: Convert html
+        run: genhtml code-coverage-report/lcov.info -o code-coverage-report/html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: code-coverage-report/html
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: genhtml
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
