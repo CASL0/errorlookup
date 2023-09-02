@@ -10,6 +10,10 @@
 
 [error_codes](https://github.com/CASL0/error_codes)のスクリプトで収集したエラーコード詳細から逆引きした結果を表示しています。
 
+Web アプリのリンク
+
+- https://casl0.github.io/errorlookup/html
+
 ### 対応エラーコード
 
 - GetLastError
@@ -29,4 +33,4 @@ fvm flutter run
 
 ### カバレッジ
 
-https://casl0.github.io/errorlookup/
+https://casl0.github.io/errorlookup/coverage
