@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - "**.dart"
+  workflow_run:
+    workflows: [Build]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
@@ -12,16 +16,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.10.6"
+
       - name: Install Dependencies
         run: flutter pub get
+
       - name: Test
         run: flutter test --coverage
+
+      - name: Download Build Artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          run_id: ${{ github.event.workflow_run.id }}
+
+      - name: Make Artifact
+        run: |
+          mkdir artifact
+          mv build-web artifact/html
+          mv coverage/lcov.info artifact/lcov.info
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: code-coverage-report
-          path: coverage/lcov.info
+          name: artifact
+          path: artifact
