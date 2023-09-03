@@ -1,9 +1,6 @@
 name: Unit Test
 
 on:
-  push:
-    paths:
-      - "**.dart"
   workflow_run:
     workflows: [Build]
     types:

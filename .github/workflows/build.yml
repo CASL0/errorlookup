@@ -2,6 +2,8 @@ name: Build
 
 on:
   push:
+    paths:
+      - "**.dart"
   workflow_dispatch:
 
 jobs:
