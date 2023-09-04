@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "**.dart"
+      - ".github/workflows/*"
   workflow_dispatch:
 
 jobs:
@@ -23,10 +24,7 @@ jobs:
         run: flutter pub get
 
       - name: Build
-        run: flutter build web
-
-      - name: Modify Base Tag
-        run: sed -i 's/<base href="\/">/<base href="\/errorlookup\/html\/">/' build/web/index.html
+        run: flutter build web --base-href "/errorlookup/html/"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
