@@ -88,6 +88,8 @@ void main() {
           errorCodesRepository: spyRepository, initialFetch: false);
       final res = await viewModel.fetchErrorCodes();
       expect(res is Failure, true);
+      expect(
+          viewModel.debugState, const HomeState(isFetchingErrorCodes: false));
       expect((res as Failure<Object, Exception>).exception.toString(),
           Exception("取得失敗").toString());
     });
@@ -114,5 +116,20 @@ void main() {
     expect(viewModel.debugState, const HomeState(errorCodeInput: -1));
     viewModel.updateErrorCodeInput("+123");
     expect(viewModel.debugState, const HomeState(errorCodeInput: 123));
+  });
+
+  test("インスタンス生成時の初期読み込み", () async {
+    fakeAsync((fakeTime) async {
+      final Map<ErrorType, Result<List<ErrorDetail>, Exception>> result = {
+        ErrorType.windows: Success(windowsErrorDetails.errors),
+        ErrorType.linux: Success(linuxErrorDetails.errors),
+        ErrorType.curl: Success(curlErrorDetails.errors)
+      };
+      final spyRepository =
+          SpyErrorCodesRepository(getErrorCodesResultMap: result);
+      HomeViewModel(errorCodesRepository: spyRepository);
+      fakeTime.elapse(const Duration(milliseconds: 500));
+      expect(spyRepository.callCount, 3);
+    });
   });
 }
