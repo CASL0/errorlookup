@@ -9,7 +9,7 @@ class FakeSettingsRepository implements SettingsRepository {
   final _themeStreamController = StreamController<ThemeMode>();
 
   @override
-  Stream getThemeSettingStream() {
+  Stream<ThemeMode> getThemeSettingStream() {
     return _themeStreamController.stream;
   }
 

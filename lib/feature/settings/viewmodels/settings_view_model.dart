@@ -11,9 +11,7 @@ class SettingsViewModel extends StateNotifier<SettingsState> {
       : _settingsRepository = settingsRepository,
         super(const SettingsState()) {
     _settingsRepository.getThemeSettingStream().listen((event) {
-      if (event is theme_data.ThemeMode) {
-        state = state.copyWith(theme: event);
-      }
+      state = state.copyWith(theme: event);
     });
   }
 

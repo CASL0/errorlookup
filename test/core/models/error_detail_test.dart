@@ -26,7 +26,7 @@ void main() {
     });
 
     test("JSONの文字列から変換するテスト", () {
-      Map<String, dynamic> jsonMap = jsonDecode(typicalStringJson);
+      final jsonMap = jsonDecode(typicalStringJson) as Map<String, dynamic>;
       final errorDetail = ErrorDetail.fromJson(jsonMap);
       expect(errorDetail.code, 10);
       expect(errorDetail.alias, "ERROR_BAD_ENVIRONMENT");

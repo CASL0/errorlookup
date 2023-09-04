@@ -22,7 +22,7 @@ class SettingsPage extends ConsumerWidget {
             ListTile(
                 title: Text(AppLocalizations.of(context)!.theme),
                 onTap: () {
-                  showDialog(
+                  showDialog<void>(
                       context: context,
                       builder: (context) => ThemeSettingDialog(
                           selectedTheme: uiState.theme,

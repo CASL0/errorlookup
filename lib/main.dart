@@ -39,9 +39,7 @@ class _MainViewModel extends StateNotifier<MainState> {
       : _repository = repository,
         super(const MainState()) {
     _repository.getThemeSettingStream().listen((event) {
-      if (event is theme_data.ThemeMode) {
-        state = state.copyWith(theme: event);
-      }
+      state = state.copyWith(theme: event);
     });
   }
 

@@ -9,7 +9,7 @@ class FakeSettingsDataSource implements SettingsDataSource {
   final _themeSettingStreamController = StreamController<ThemeMode>();
 
   @override
-  Stream getThemeSettingStream() {
+  Stream<ThemeMode> getThemeSettingStream() {
     return _themeSettingStreamController.stream;
   }
 

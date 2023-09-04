@@ -82,7 +82,7 @@ void main() {
     });
 
     test("JSONの文字列から変換するテスト", () {
-      Map<String, dynamic> jsonMap = jsonDecode(typicalStringJson);
+      final jsonMap = jsonDecode(typicalStringJson) as Map<String, dynamic>;
       final errorDetails = ErrorDetails.fromJson(jsonMap);
 
       expect(errorDetails.errors.length, 4);

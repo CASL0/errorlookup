@@ -11,7 +11,7 @@ class DefaultSettingsRepository implements SettingsRepository {
 
   /// テーマ設定のストリームを取得します
   @override
-  Stream getThemeSettingStream() {
+  Stream<ThemeMode> getThemeSettingStream() {
     return _dataSource.getThemeSettingStream();
   }
 

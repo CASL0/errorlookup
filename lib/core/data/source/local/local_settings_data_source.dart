@@ -42,7 +42,7 @@ class LocalSettingsDataSource implements SettingsDataSource {
   }
 
   @override
-  Stream getThemeSettingStream() {
+  Stream<ThemeMode> getThemeSettingStream() {
     return _themeSettingStreamController.stream;
   }
 

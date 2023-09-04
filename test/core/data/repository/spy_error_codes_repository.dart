@@ -21,7 +21,7 @@ class SpyErrorCodesRepository implements ErrorCodesRepository {
   Future<Result<List<ErrorDetail>, Exception>> getErrorCodes(
       ErrorType type) async {
     _callCount++;
-    await Future.delayed(const Duration(milliseconds: 500));
+    await Future<void>.delayed(const Duration(milliseconds: 500));
     return Future.value(_getErrorCodesResultMap[type]);
   }
 }

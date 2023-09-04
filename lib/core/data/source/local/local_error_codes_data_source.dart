@@ -25,7 +25,7 @@ class LocalErrorCodesDataSource implements ErrorCodesDataSource {
 
   Future<List<ErrorDetail>> _getErrorCodes(final String assetPath) async {
     final jsonString = await rootBundle.loadString(assetPath);
-    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+    final jsonMap = jsonDecode(jsonString) as Map<String, dynamic>;
     return ErrorDetails.fromJson(jsonMap).errors;
   }
 }
