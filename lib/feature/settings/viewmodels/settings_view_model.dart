@@ -2,8 +2,6 @@ import 'package:errorlookup/core/data/repository/settings_repository.dart';
 import 'package:errorlookup/core/models/result.dart';
 import 'package:errorlookup/core/models/theme_data.dart' as theme_data;
 import 'package:errorlookup/feature/settings/models/settings_state.dart';
-import 'package:errorlookup/feature/settings/views/theme_setting_dialog.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 
@@ -25,17 +23,6 @@ class SettingsViewModel extends StateNotifier<SettingsState> {
   Future<Result<bool, Exception>> saveThemeSetting(
       {required final theme_data.ThemeMode newMode}) async {
     return await _settingsRepository.saveThemeSetting(newMode: newMode);
-  }
-
-  /// テーマ設定画面を開きます
-  void openThemeSetting(final BuildContext context) {
-    showDialog(
-        context: context,
-        builder: (context) => ThemeSettingDialog(
-            selectedTheme: state.theme,
-            themeChanged: (e) {
-              saveThemeSetting(newMode: e);
-            }));
   }
 }
 
