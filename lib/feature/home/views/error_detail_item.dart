@@ -26,14 +26,12 @@ class ErrorDetailItem extends StatelessWidget {
       subtitle: Text(_errorTypeConverter[_errorType] ?? ""),
       leading: const Icon(Icons.description),
       children: [
-        Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            child: SelectionArea(
-                child: Text(
-              _errorDetail.description,
-              style: Theme.of(context).textTheme.titleLarge,
-            ))),
+        SelectionArea(
+            child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                child: Text(_errorDetail.description,
+                    style: Theme.of(context).textTheme.titleLarge)))
       ],
     );
   }
