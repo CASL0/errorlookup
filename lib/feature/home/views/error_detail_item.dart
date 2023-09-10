@@ -29,10 +29,11 @@ class ErrorDetailItem extends StatelessWidget {
         Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
-            child: Text(
+            child: SelectionArea(
+                child: Text(
               _errorDetail.description,
               style: Theme.of(context).textTheme.titleLarge,
-            )),
+            ))),
       ],
     );
   }

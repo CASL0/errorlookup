@@ -19,8 +19,10 @@ class AboutPage extends ConsumerWidget {
         body: ListView(
           children: [
             ListTile(
-              title: Text(AppLocalizations.of(context)!.version),
-              trailing: Text("${uiState.version} (${uiState.buildNumber})"),
+              title: SelectionArea(
+                  child: Text(AppLocalizations.of(context)!.version)),
+              trailing: SelectionArea(
+                  child: Text("${uiState.version} (${uiState.buildNumber})")),
             ),
             ListTile(
               title: Text(AppLocalizations.of(context)!.source),
