@@ -1,9 +1,9 @@
-import 'package:errorlookup/core/data/repository/settings_repository.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/core/models/theme_data.dart' as theme_data;
-import 'package:errorlookup/feature/settings/models/settings_state.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get_it/get_it.dart';
+import "package:errorlookup/core/data/repository/settings_repository.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/core/models/theme_data.dart" as theme_data;
+import "package:errorlookup/feature/settings/models/settings_state.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:get_it/get_it.dart";
 
 /// 設定画面のビジネスロジックを扱うVieModel
 class SettingsViewModel extends StateNotifier<SettingsState> {

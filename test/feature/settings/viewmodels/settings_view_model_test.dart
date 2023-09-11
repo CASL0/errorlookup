@@ -1,11 +1,11 @@
-import 'package:errorlookup/core/data/repository/settings_repository.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/core/models/theme_data.dart';
-import 'package:errorlookup/feature/settings/models/settings_state.dart';
-import 'package:errorlookup/feature/settings/viewmodels/settings_view_model.dart';
-import 'package:flutter_test/flutter_test.dart';
+import "package:errorlookup/core/data/repository/settings_repository.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/core/models/theme_data.dart";
+import "package:errorlookup/feature/settings/models/settings_state.dart";
+import "package:errorlookup/feature/settings/viewmodels/settings_view_model.dart";
+import "package:flutter_test/flutter_test.dart";
 
-import '../../../core/data/repository/fake_settings_repository.dart';
+import "../../../core/data/repository/fake_settings_repository.dart";
 
 void main() {
   late SettingsRepository repository;

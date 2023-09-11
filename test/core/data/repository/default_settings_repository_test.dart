@@ -1,10 +1,10 @@
-import 'package:errorlookup/core/data/repository/default_settings_repository.dart';
-import 'package:errorlookup/core/data/source/settings_data_source.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/core/models/theme_data.dart';
-import 'package:flutter_test/flutter_test.dart';
+import "package:errorlookup/core/data/repository/default_settings_repository.dart";
+import "package:errorlookup/core/data/source/settings_data_source.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/core/models/theme_data.dart";
+import "package:flutter_test/flutter_test.dart";
 
-import '../source/fake_settings_data_source.dart';
+import "../source/fake_settings_data_source.dart";
 
 void main() {
   late SettingsDataSource dataSource;

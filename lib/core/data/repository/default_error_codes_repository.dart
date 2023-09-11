@@ -1,7 +1,7 @@
-import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
-import 'package:errorlookup/core/data/source/error_codes_data_source.dart';
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:errorlookup/core/models/result.dart';
+import "package:errorlookup/core/data/repository/error_codes_repository.dart";
+import "package:errorlookup/core/data/source/error_codes_data_source.dart";
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:errorlookup/core/models/result.dart";
 
 /// エラーコードのリポジトリ層の実装
 class DefaultErrorCodesRepository implements ErrorCodesRepository {

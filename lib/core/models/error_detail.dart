@@ -1,6 +1,6 @@
-import 'package:json_annotation/json_annotation.dart';
+import "package:json_annotation/json_annotation.dart";
 
-part 'error_detail.g.dart';
+part "error_detail.g.dart";
 
 @JsonSerializable()
 class ErrorDetail {

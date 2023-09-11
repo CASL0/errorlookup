@@ -1,8 +1,8 @@
-import 'package:errorlookup/core/common/views/top_app_bar.dart';
-import 'package:errorlookup/feature/about/viewmodels/about_view_model.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import "package:errorlookup/core/common/views/top_app_bar.dart";
+import "package:errorlookup/feature/about/viewmodels/about_view_model.dart";
+import "package:flutter/material.dart";
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
 
 /// アプリについて画面
 class AboutPage extends ConsumerWidget {

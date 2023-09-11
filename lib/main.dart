@@ -1,12 +1,12 @@
-import 'package:errorlookup/core/data/di/data_modules.dart';
-import 'package:errorlookup/core/data/repository/settings_repository.dart';
-import 'package:errorlookup/core/models/main_state.dart';
-import 'package:errorlookup/core/models/theme_data.dart' as theme_data;
-import 'package:errorlookup/core/router/router.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get_it/get_it.dart';
+import "package:errorlookup/core/data/di/data_modules.dart";
+import "package:errorlookup/core/data/repository/settings_repository.dart";
+import "package:errorlookup/core/models/main_state.dart";
+import "package:errorlookup/core/models/theme_data.dart" as theme_data;
+import "package:errorlookup/core/router/router.dart";
+import "package:flutter/material.dart";
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:get_it/get_it.dart";
 
 void main() {
   setupDataModules();

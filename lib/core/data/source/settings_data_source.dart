@@ -1,5 +1,5 @@
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/core/models/theme_data.dart';
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/core/models/theme_data.dart";
 
 /// 設定のデータ層のインターフェース
 abstract interface class SettingsDataSource {

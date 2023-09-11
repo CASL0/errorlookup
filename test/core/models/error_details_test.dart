@@ -1,7 +1,7 @@
-import 'dart:convert';
+import "dart:convert";
 
-import 'package:errorlookup/core/models/error_details.dart';
-import 'package:flutter_test/flutter_test.dart';
+import "package:errorlookup/core/models/error_details.dart";
+import "package:flutter_test/flutter_test.dart";
 
 void main() {
   const typicalObjectJson = <String, dynamic>{

@@ -1,7 +1,7 @@
-import 'package:errorlookup/core/router/route.dart';
-import 'package:errorlookup/feature/about/pages/about_page.dart';
-import 'package:errorlookup/feature/home/pages/home_page.dart';
-import 'package:errorlookup/feature/settings/pages/settings_page.dart';
+import "package:errorlookup/core/router/route.dart";
+import "package:errorlookup/feature/about/pages/about_page.dart";
+import "package:errorlookup/feature/home/pages/home_page.dart";
+import "package:errorlookup/feature/settings/pages/settings_page.dart";
 
 final Set<AppRoute> appRoutes = {
   const AppRoute(

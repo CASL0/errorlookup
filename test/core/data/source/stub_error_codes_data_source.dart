@@ -1,7 +1,7 @@
-import 'package:errorlookup/core/data/source/error_codes_data_source.dart';
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:errorlookup/core/models/error_details.dart';
-import 'package:errorlookup/core/models/result.dart';
+import "package:errorlookup/core/data/source/error_codes_data_source.dart";
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:errorlookup/core/models/error_details.dart";
+import "package:errorlookup/core/models/result.dart";
 
 /// エラーコードのデータ層のスタブ
 class StubErrorCodesDataSource implements ErrorCodesDataSource {

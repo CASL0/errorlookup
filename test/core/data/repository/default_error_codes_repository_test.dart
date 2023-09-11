@@ -1,10 +1,10 @@
-import 'package:errorlookup/core/data/repository/default_error_codes_repository.dart';
-import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:flutter_test/flutter_test.dart';
+import "package:errorlookup/core/data/repository/default_error_codes_repository.dart";
+import "package:errorlookup/core/data/repository/error_codes_repository.dart";
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:flutter_test/flutter_test.dart";
 
-import '../source/stub_error_codes_data_source.dart';
+import "../source/stub_error_codes_data_source.dart";
 
 void main() {
   const windowsObjectJson = <String, dynamic>{
@@ -54,7 +54,7 @@ void main() {
   tearDownAll(() => repository = null);
 
   group("DefaultErrorCodesRepositoryTest", () {
-    test('Windowsエラーコードの取得テスト', () async {
+    test("Windowsエラーコードの取得テスト", () async {
       final windowsError = await repository?.getErrorCodes(ErrorType.windows);
       expect(windowsError is Success, true);
       final errorCodes =

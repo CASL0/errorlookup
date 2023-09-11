@@ -1,8 +1,8 @@
-import 'dart:async';
+import "dart:async";
 
-import 'package:errorlookup/core/data/repository/settings_repository.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/core/models/theme_data.dart';
+import "package:errorlookup/core/data/repository/settings_repository.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/core/models/theme_data.dart";
 
 /// 設定のリポジトリ層のフェイク
 class FakeSettingsRepository implements SettingsRepository {

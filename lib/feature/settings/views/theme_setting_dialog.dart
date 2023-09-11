@@ -1,7 +1,7 @@
-import 'package:errorlookup/core/models/theme_data.dart' as theme_data;
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:go_router/go_router.dart';
+import "package:errorlookup/core/models/theme_data.dart" as theme_data;
+import "package:flutter/material.dart";
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import "package:go_router/go_router.dart";
 
 /// テーマ設定変更ダイアログ
 class ThemeSettingDialog extends StatelessWidget {

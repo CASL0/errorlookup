@@ -1,7 +1,7 @@
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:json_annotation/json_annotation.dart';
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:json_annotation/json_annotation.dart";
 
-part 'error_details.g.dart';
+part "error_details.g.dart";
 
 @JsonSerializable()
 class ErrorDetails {

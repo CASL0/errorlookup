@@ -1,9 +1,9 @@
-import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/feature/home/models/home_state.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get_it/get_it.dart';
+import "package:errorlookup/core/data/repository/error_codes_repository.dart";
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/feature/home/models/home_state.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:get_it/get_it.dart";
 
 /// ホーム画面のビジネスロジックを扱うViewModel
 class HomeViewModel extends StateNotifier<HomeState> {

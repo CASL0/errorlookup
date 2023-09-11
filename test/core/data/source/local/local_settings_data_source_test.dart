@@ -1,8 +1,8 @@
-import 'package:errorlookup/core/data/source/local/local_settings_data_source.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/core/models/theme_data.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import "package:errorlookup/core/data/source/local/local_settings_data_source.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/core/models/theme_data.dart";
+import "package:flutter_test/flutter_test.dart";
+import "package:shared_preferences/shared_preferences.dart";
 
 void main() {
   group("LocalSettingsDataSourceTest", () {

@@ -1,13 +1,13 @@
-import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:errorlookup/core/models/error_details.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/feature/home/models/home_state.dart';
-import 'package:errorlookup/feature/home/viewmodels/home_view_model.dart';
-import 'package:fake_async/fake_async.dart';
-import 'package:flutter_test/flutter_test.dart';
+import "package:errorlookup/core/data/repository/error_codes_repository.dart";
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:errorlookup/core/models/error_details.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/feature/home/models/home_state.dart";
+import "package:errorlookup/feature/home/viewmodels/home_view_model.dart";
+import "package:fake_async/fake_async.dart";
+import "package:flutter_test/flutter_test.dart";
 
-import '../../../core/data/repository/spy_error_codes_repository.dart';
+import "../../../core/data/repository/spy_error_codes_repository.dart";
 
 void main() {
   const windowsObjectJson = <String, dynamic>{

@@ -1,7 +1,7 @@
-import 'package:errorlookup/core/data/repository/error_codes_repository.dart';
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:expansion_tile_card/expansion_tile_card.dart';
-import 'package:flutter/material.dart';
+import "package:errorlookup/core/data/repository/error_codes_repository.dart";
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:expansion_tile_card/expansion_tile_card.dart";
+import "package:flutter/material.dart";
 
 /// エラーコード内容のカード
 class ErrorDetailItem extends StatelessWidget {

@@ -1,9 +1,9 @@
-import 'dart:async';
+import "dart:async";
 
-import 'package:errorlookup/core/data/source/settings_data_source.dart';
-import 'package:errorlookup/core/models/result.dart';
-import 'package:errorlookup/core/models/theme_data.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import "package:errorlookup/core/data/source/settings_data_source.dart";
+import "package:errorlookup/core/models/result.dart";
+import "package:errorlookup/core/models/theme_data.dart";
+import "package:shared_preferences/shared_preferences.dart";
 
 /// データ層の実装
 class LocalSettingsDataSource implements SettingsDataSource {

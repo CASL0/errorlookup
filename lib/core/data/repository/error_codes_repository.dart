@@ -1,5 +1,5 @@
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:errorlookup/core/models/result.dart';
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:errorlookup/core/models/result.dart";
 
 /// エラーコードのリポジトリ層のインターフェース
 abstract interface class ErrorCodesRepository {

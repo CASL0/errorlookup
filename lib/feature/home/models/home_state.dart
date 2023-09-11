@@ -1,5 +1,5 @@
-import 'package:errorlookup/core/models/error_detail.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:errorlookup/core/models/error_detail.dart";
+import "package:freezed_annotation/freezed_annotation.dart";
 
 part "home_state.freezed.dart";
 

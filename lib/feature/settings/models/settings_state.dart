@@ -1,7 +1,7 @@
-import 'package:errorlookup/core/models/theme_data.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:errorlookup/core/models/theme_data.dart";
+import "package:freezed_annotation/freezed_annotation.dart";
 
-part 'settings_state.freezed.dart';
+part "settings_state.freezed.dart";
 
 /// 設定画面のUI状態
 @freezed
